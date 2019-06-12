@@ -1,5 +1,3 @@
-0.1.0 / 2011-12-12
+0.1.0 / 12-06-2019
 ==================
   * Initial version
-  * Supports managed stopwatch instances
-  * Alow manual instance management

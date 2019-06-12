@@ -22,7 +22,7 @@ To create a stopwatch you only need a identifier and you can pass a hash with op
 ```js
 var Stopwatch = require('stopwatch').Stopwatch;
 
-var stopwatch = new Stopwatch(1, { seconds: 60 });
+var stopwatch = new Stopwatch(1);
 stopwatch.on('tick', function(secondsLeft) {
   //when one second pass.
 });
@@ -37,7 +37,7 @@ If you want a managed instance (per identifier) you only need to require the mod
 ```js
 var StopwatchManager = require('stopwatch');
 
-var stopwatch = StopwatchManager.get(1, {seconds: 10 });
+var stopwatch = StopwatchManager.get(1);
 stopwatch.on('tick', function(secondsLeft) {
   //when one second pass.
 });
@@ -47,7 +47,7 @@ stopwatch.on('end', function() {
 });
 
 //It will get the same instance
-var stopwatchRecovered = StopwatchManager.get(1, {seconds: 10 });
+var stopwatchRecovered = StopwatchManager.get(1);
 ```
 
 If you invoke get with the same id, it will not create another instance, but use the same stored instance. When ends, it cleans the managed reference to prevent memory leaks by strong references.

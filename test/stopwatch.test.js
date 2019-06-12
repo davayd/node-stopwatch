@@ -5,29 +5,9 @@ describe('Stopwatch', function() {
   var stopwatch = null;
 
   beforeEach(function() {
-    stopwatch = new Stopwatch(1, { interval:0 });
+    stopwatch = new Stopwatch(1);
   });
 
-  describe('events', function() {
-    describe('tick and end', function() {
-      beforeEach(function() {
-        stopwatch.start();
-      });
-   
-      it('should emit tick N times based on', function(done) {
-        var left = 10;
-        stopwatch.on('tick', function(secondsLeft) {
-          secondsLeft.should.equal(left--);
-          if (left < 0) { done(); }
-        });
-      });
-   
-      it('should emit an end event', function(done) {
-        stopwatch.on('end', done);
-      });
-    });
-  });
-  
   describe('#start', function() {
     it('should return true when first time', function() {
       stopwatch.start().should.be.true;
@@ -73,10 +53,6 @@ describe('Stopwatch', function() {
         it('should remove all tick listeners', function() {
           stopwatch.listeners('tick').length.should.equal(0);
         });
-
-        it('should remove all end listeners', function() {
-          stopwatch.listeners('end').length.should.equal(0);
-        });
       });
     });
 
@@ -101,14 +77,6 @@ describe('Stopwatch', function() {
     it('should be started after calling #start', function() {
       stopwatch.start();
       stopwatch.started().should.be.true;
-    });
-
-    it('should not be started when end', function(done) {
-      stopwatch.start();
-      stopwatch.on('end', function() {
-        stopwatch.started().should.be.false;
-        done();
-      });
     });
   });
 });

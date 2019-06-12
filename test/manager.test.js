@@ -2,7 +2,7 @@ var should = require('should');
 var StopwatchManager = require('../lib/stopwatch');
 
 describe('StopwatchManager', function() {
-  var stopwatch = StopwatchManager.get(1, {seconds: 1, interval: 0});
+  var stopwatch = StopwatchManager.get(1);
 
   describe('getting an instance', function() {
     var subject = StopwatchManager.get(1);
@@ -16,16 +16,4 @@ describe('StopwatchManager', function() {
     });
   });
   
-  describe('when the time ends', function() {
-    it('should create a new instance', function(done) {
-      stopwatch.start();
-      stopwatch.on('end', function() {
-        var subject = StopwatchManager.get(1, { seconds: 10, interval: 2000 });
-        subject.seconds.should.equal(10);
-        subject.interval.should.equal(2000);
-        done();
-      });
-    });
-
-  });
 });

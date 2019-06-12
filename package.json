@@ -1,12 +1,12 @@
 {
-  "author": "Emerson Macedo <emerleite@gmail.com> (http://codificando.com)",
+  "author": "Dmitry Dreko <dmitrydreko@gmail.com>",
   "name": "stopwatch",
   "description": "A managed stopwatch for Realtime Node.JS Apps",
-  "version": "0.2.0",
-  "homepage": "http://github.com/emerleite/node-stopwatch",
+  "version": "0.1.0",
+  "homepage": "https://github.com/davayd/node-stopwatch",
   "repository": {
     "type": "git",
-    "url": "git://github.com/emerleite/node-stopwatch.git"
+    "url": "git://github.com/davayd/node-stopwatch.git"
   },
   "main": "index.js",
   "scripts": {
@@ -16,8 +16,8 @@
     "node": ">=0.8.0"
   },
   "dependencies": {},
-  "devDependencies": { 
-    "mocha" : "2.0.1",
-    "should" : "4.3.0" 
+  "devDependencies": {
+    "mocha": "^2.0.1",
+    "should": "^4.3.0"
   }
 }
